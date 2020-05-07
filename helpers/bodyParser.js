@@ -1,4 +1,4 @@
-const url = require("url");
+const {parse} = require("url");
 
 /**
  *
@@ -20,7 +20,7 @@ function body(incoming, callback) {
  */
 
 function query(incoming, callback) {
-  let queryParse = url.parse(incoming.url, true).query;
+  let queryParse = parse(incoming.url, true).query;
   callback(queryParse);
 }
 
